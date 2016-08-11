@@ -13,11 +13,8 @@
         <span data-ng-if="customer.user" data-ng-bind="customer.user.displayName"></span>
         <span data-ng-if="!customer.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" data-ng-bind="customer.firstName"></h4>
-    <h4 class="list-group-item-heading" data-ng-bind="customer.lastName"></h4>
-        <h4 class="list-group-item-heading" data-ng-bind="customer.lastPurchaseDate"></h4>
-        <h4 class="list-group-item-heading" data-ng-bind="customer.email"></h4>
-
+      <h4 class="list-group-item-heading" data-ng-model="customer">{{customer.firstName}}  {{customer.lastName}}</h4>
+      <h5 class="list-group-item-heading" data-ng-model="customer">Last store purchase: {{customer.created | date:"medium"}}</h5>
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="vm.customers.$resolved && !vm.customers.length">

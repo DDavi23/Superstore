@@ -13,29 +13,55 @@ var CustomerSchema = new Schema({
   firstName: {
     type: String,
     default: '',
-    required: 'Please fill customer first name',
+    required: "Please fill out customer first name",
     trim: true
   },
-    lastName: {
-      type: String,
-      default: '',
-      required: 'Please fill customer last name',
-      trim: true
-    },
-    lastPurchaseDate: {
-      type: String,
-      default: '',
-      required:'Please fill in last date of purchase',
-    },
-    email: {
-      type: String,
-      default: '',
-      required: 'Please fill in email address',
-    },
+
+  lastName: {
+    type: String,
+    default: '',
+    required: "Please fill out customer last name",
+    trim: true
+  },
+
+  address: {
+    type: String,
+    default: '',
+    required: "Please fill out customer address",
+    trim: true
+  },
+
+  phoneNumber: {
+    type: String,
+    default: '',
+    required: "Please fill out customer phone number",
+    trim: true
+  },
+
+  email: {
+    type: String,
+    default: '',
+    required: "Please fill out customer email",
+    trim: true
+  },
+
+  dob: {
+    type: String,
+    default: '',
+    required: "Please fill out customer DOB",
+    trim: true
+  },
+
+  lastPurchaseDate: {
+    type: Date,
+    deafult: Date.now
+  },
+
   created: {
     type: Date,
     default: Date.now
   },
+
   user: {
     type: Schema.ObjectId,
     ref: 'User'
